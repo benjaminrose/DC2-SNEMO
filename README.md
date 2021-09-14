@@ -6,7 +6,7 @@ Use SNEMO (via SNComso) to fit the DC2 photometry. This will allow, at a later d
 
 ## Setup
 
-Use the base DESC SN CORI environment:
+Use this script with the base DESC-SN Cori environment:
 ```shell
 source /global/cfs/cdirs/lsst/groups/SN/software/setup_sn_all.sh
 ```
@@ -15,6 +15,8 @@ source /global/cfs/cdirs/lsst/groups/SN/software/setup_sn_all.sh
 
 From `$SNANA_LSST_ROOT/starterKits/DC2+SNEMO` on Cori, (using the DESC `base` SN conda env) run `python fit_lc.py`. Light-curve fits will be found in `snemo2.FITRES` and `snemo2.csv` with errors recorded in `ERROR.log`.
 
+Currently, without optimization, it takes ~15 mins to fit 50 SNe.
+
 ## Tutorials/Documentation
 
-Currently in `/docs/` but will be hosted on GitHub pages someday.
+Tutorials and documenation in `/docs/` are hosted on GitHub pages at https://benjaminrose.github.io/DC2-SNEMO/.
