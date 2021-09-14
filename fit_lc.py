@@ -265,7 +265,6 @@ if __name__ == "__main__":
     VERBOSE = False
 
     now = datetime.now()
-    print(ERROR_FILE_PATH)
     with open(ERROR_FILE_PATH, "w") as error_file:
         error_file.write(f"Running fits with SNEMO_FIT {__version__} on {now}\n")
         main()
