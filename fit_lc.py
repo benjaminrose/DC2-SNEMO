@@ -106,6 +106,10 @@ def fit_lc(data, model, mcmc=True):
     -------
     idk
         idk
+
+    TODO
+    ----
+    - [ ] Apply cuts pre-fitting?
     """
     fit_results = []
 
@@ -130,13 +134,15 @@ def fit_lc(data, model, mcmc=True):
                     # TODO: add prior functions.
                 )
             except sncosmo.fitting.DataQualityError:
+                # This is an interesting error, and one we can do something about, if we want.
                 message = (
                     f"{sn.meta['SNID'].decode('utf-8')} has no data with S/N > {MINSNR}"
                 )
                 print(message, end="\n\n")
                 error_file.write(message + "\n")
-            except RuntimeError as error:
-                message = f"{sn.meta['SNID'].decode('utf-8')} at z = {sn.meta['REDSHIFT_FINAL']:.6G} had a runtime error: "
+            except Exception as error:
+                # Record all errors, but then proceed to the next SN
+                message = f"{sn.meta['SNID'].decode('utf-8')} at z = {sn.meta['REDSHIFT_FINAL']:.5G} had a error: "
                 print(message)
                 print(error, end="\n\n")
                 error_file.write(message + str(error) + "\n")
