@@ -237,16 +237,6 @@ def _save_as_fitres(tidy_data, file_path):
         f.write(f"# Made with SNEMO_FIT {__version__}\n")
         data.to_csv(f, sep=" ", float_format="%.6G", index=False)
 
-    # PRE-writing of `combin_and_tidy()`
-    # with open(file_path, "w") as f:
-    #     f.write(f"# Made with SNEMO_FIT {__version__}")
-    #     f.write("\nVARNAMES: " + " ".join(fit_results[0].param_names))
-    #     for fit in fit_results:
-    #         f.write("\nSN: ")
-    #         for value in fit.parameters:
-    #             f.write(f"{value:.6G} ")
-    #             # np.savetxt(f, fit.parameters, "%.6G", delimiter=' ', newline='')
-
 
 def _save_as_csv(tidy_data, file_path):
     with open(file_path, "w") as f:
