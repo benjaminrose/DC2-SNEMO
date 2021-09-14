@@ -165,15 +165,25 @@ def fit_lc(data, model, mcmc=True):
 
 
 def combin_and_tidy(data_tables, fit_results):
-    """Take input (meta) data and fit results and make a tidy data table"""
+    """Take input (meta) data and fit results and make a tidy data table
+    
+    TODO
+    ----
+    - [ ] Don't repeat code-snippets between inital SN and the rest of the data set.
+    - [ ] Save out full covariance between parameters rather than just diagonal terms
+        - fit_results[0].covariance rather than fit_results[0].errors
+    """
     # Build initial DataFrame with photometry metadata, fit parameters, uncertainties, and fitting keys
     # Pass along all input keys. Prepend `MODEL-NAME_` to all new keys.
     tidy_data = DataFrame(data_tables[0].meta, index=[0])
     tidy_data[
         np.char.add(f"{MODEL.upper()}_", fit_results[0].param_names)
     ] = fit_results[0].parameters
-    # TODO: add uncertainties
-    # TODO: add fitting parameters like mean_acceptance_fraction
+    #OrderedDicts are a pain in DuckTyping. You can't iterate over it with `np.char.add`.
+    tidy_data[
+        [f"{MODEL.upper()}_"+str(s)+"_ERR" for s in fit_results[0].errors.keys()]
+    ] = fit_results[0].errors.values()
+    tidy_data[f"{MODEL}_accept_frac".upper()] = fit_results[0].mean_acceptance_fraction
 
     # Add a data row for each subsiquent SN after checking length of data
     if len(data_tables) == 1:
@@ -185,7 +195,10 @@ def combin_and_tidy(data_tables, fit_results):
         tidy_data.loc[
             next_index, np.char.add(f"{MODEL.upper()}_", fit.param_names)
         ] = fit.parameters
-        # Add  paramter errors and fitting parameters
+        tidy_data.loc[
+            next_index, [f"{MODEL.upper()}_"+str(s)+"_ERR" for s in fit_results[0].errors.keys()]
+        ] = fit.errors.values()
+        tidy_data.loc[next_index, f"{MODEL}_accept_frac".upper()] = fit.mean_acceptance_fraction
 
     # Convert bite-strings to string-strings
     # Sadly this is not done inplace.
