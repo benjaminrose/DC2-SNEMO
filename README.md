@@ -20,3 +20,8 @@ Currently, without optimization, it takes ~15 mins to fit 50 SNe.
 ## Tutorials/Documentation
 
 Tutorials and documenation in `/docs/` are hosted on GitHub pages at https://benjaminrose.github.io/DC2-SNEMO/.
+
+
+## Outputs
+
+* Batch job 47473881 producecd `snemo2_v0.1` output for the first 200 SNe in DC2 (172 where fit).

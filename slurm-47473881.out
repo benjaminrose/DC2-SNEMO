@@ -1,0 +1,278 @@
+Now using /global/common/software/lsst/common/miniconda/sn-py/bin/python
+Starging batch_fit_lc at Thu Sep 23 07:29:28 PDT 2021
+--------------------
+
+/global/common/software/lsst/common/miniconda/sn-py/lib/python3.7/site-packages/sncosmo/fitting.py:77: RuntimeWarning: overflow encountered in square
+  return np.sum(((data.flux - mflux) / data.fluxerr)**2)
+/global/common/software/lsst/common/miniconda/sn-py/lib/python3.7/site-packages/sncosmo/models.py:1015: RuntimeWarning: overflow encountered in power
+  model_c = 10**(-0.4 * color)
+/global/common/software/lsst/common/miniconda/sn-py/lib/python3.7/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: invalid value encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+/global/common/software/lsst/common/miniconda/sn-py/lib/python3.7/site-packages/sncosmo/models.py:1017: RuntimeWarning: invalid value encountered in multiply
+  return model_ev * model_c
+Fitting MS_9044_1096
+Fitting MS_9044_1118
+Fitting MS_9044_1304
+Fitting MS_9044_1669
+Fitting MS_9044_1900
+Fitting MS_9044_1974
+Fitting MS_9044_24
+Fitting MS_9044_2899
+MS_9044_2899 at z = 0.8555 had a error: 
+No bands in data overlap the model.
+
+Fitting MS_9044_370
+Fitting MS_9044_388
+Fitting MS_9044_39
+Fitting MS_9044_808
+Fitting MS_9171_1019
+Fitting MS_9171_1022
+Fitting MS_9171_1024
+Fitting MS_9171_1027
+Fitting MS_9171_1029
+Fitting MS_9171_1031
+Fitting MS_9171_1038
+Fitting MS_9171_1057
+Fitting MS_9171_1068
+Fitting MS_9171_1076
+Fitting MS_9171_1079
+Fitting MS_9171_1096
+Fitting MS_9171_11
+Fitting MS_9171_1104
+Fitting MS_9171_1118
+Fitting MS_9171_1119
+MS_9171_1119 has no data with S/N > 3
+
+Fitting MS_9171_1139
+Fitting MS_9171_1152
+Fitting MS_9171_1154
+Fitting MS_9171_1155
+Fitting MS_9171_1166
+Fitting MS_9171_1171
+Fitting MS_9171_1173
+Fitting MS_9171_1185
+Fitting MS_9171_127
+Fitting MS_9171_1283
+MS_9171_1283 at z = 0.62 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_1296
+Fitting MS_9171_1298
+MS_9171_1298 has no data with S/N > 3
+
+Fitting MS_9171_1314
+Fitting MS_9171_1323
+Fitting MS_9171_134
+Fitting MS_9171_1342
+Fitting MS_9171_1353
+Fitting MS_9171_1354
+Fitting MS_9171_1403
+Fitting MS_9171_1407
+Fitting MS_9171_1423
+Fitting MS_9171_144
+Fitting MS_9171_1456
+Fitting MS_9171_1458
+Fitting MS_9171_1459
+Fitting MS_9171_147
+Fitting MS_9171_1472
+Fitting MS_9171_1502
+Fitting MS_9171_1506
+MS_9171_1506 has no data with S/N > 3
+
+Fitting MS_9171_1512
+Fitting MS_9171_1517
+MS_9171_1517 at z = 0.6602 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_1529
+MS_9171_1529 at z = 0.6786 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_1543
+Fitting MS_9171_1565
+MS_9171_1565 has no data with S/N > 3
+
+Fitting MS_9171_1569
+Fitting MS_9171_1571
+Fitting MS_9171_1593
+MS_9171_1593 at z = 0.6644 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_1596
+Fitting MS_9171_1598
+Fitting MS_9171_1600
+MS_9171_1600 has no data with S/N > 3
+
+Fitting MS_9171_1602
+MS_9171_1602 has no data with S/N > 3
+
+Fitting MS_9171_1618
+MS_9171_1618 at z = 0.6693 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_162
+Fitting MS_9171_1621
+MS_9171_1621 has no data with S/N > 3
+
+Fitting MS_9171_1622
+Fitting MS_9171_163
+Fitting MS_9171_1637
+Fitting MS_9171_1643
+Fitting MS_9171_1644
+Fitting MS_9171_1669
+Fitting MS_9171_1688
+Fitting MS_9171_1694
+Fitting MS_9171_1697
+Fitting MS_9171_1699
+MS_9171_1699 has no data with S/N > 3
+
+Fitting MS_9171_170
+Fitting MS_9171_171
+Fitting MS_9171_1713
+Fitting MS_9171_1716
+Fitting MS_9171_1718
+Fitting MS_9171_172
+Fitting MS_9171_1757
+Fitting MS_9171_1758
+MS_9171_1758 at z = 0.6839 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_176
+Fitting MS_9171_1769
+Fitting MS_9171_177
+Fitting MS_9171_178
+Fitting MS_9171_1783
+Fitting MS_9171_179
+Fitting MS_9171_181
+Fitting MS_9171_1837
+MS_9171_1837 has no data with S/N > 3
+
+Fitting MS_9171_1844
+Fitting MS_9171_1853
+Fitting MS_9171_1855
+Fitting MS_9171_1862
+Fitting MS_9171_1865
+Fitting MS_9171_1867
+Fitting MS_9171_1881
+Fitting MS_9171_1885
+Fitting MS_9171_1897
+Fitting MS_9171_1911
+Fitting MS_9171_1936
+Fitting MS_9171_1938
+Fitting MS_9171_1943
+Fitting MS_9171_1947
+Fitting MS_9171_1958
+Fitting MS_9171_198
+MS_9171_198 at z = 0.3076 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_1990
+MS_9171_1990 has no data with S/N > 3
+
+Fitting MS_9171_1997
+Fitting MS_9171_1999
+Fitting MS_9171_200
+Fitting MS_9171_2013
+Fitting MS_9171_2017
+Fitting MS_9171_2024
+Fitting MS_9171_203
+Fitting MS_9171_2034
+Fitting MS_9171_2038
+Fitting MS_9171_2041
+Fitting MS_9171_2053
+Fitting MS_9171_2079
+MS_9171_2079 has no data with S/N > 3
+
+Fitting MS_9171_2083
+Fitting MS_9171_2092
+Fitting MS_9171_2104
+Fitting MS_9171_2110
+Fitting MS_9171_213
+Fitting MS_9171_2133
+Fitting MS_9171_215
+Fitting MS_9171_2159
+Fitting MS_9171_216
+Fitting MS_9171_2167
+Fitting MS_9171_2171
+Fitting MS_9171_2175
+Fitting MS_9171_2202
+Fitting MS_9171_222
+Fitting MS_9171_2228
+Fitting MS_9171_225
+Fitting MS_9171_226
+Fitting MS_9171_2265
+Fitting MS_9171_230
+Fitting MS_9171_2309
+Fitting MS_9171_2320
+MS_9171_2320 has no data with S/N > 3
+
+Fitting MS_9171_2376
+Fitting MS_9171_2409
+Fitting MS_9171_2410
+Fitting MS_9171_242
+Fitting MS_9171_246
+Fitting MS_9171_2468
+Fitting MS_9171_2479
+Fitting MS_9171_2492
+Fitting MS_9171_2494
+MS_9171_2494 has no data with S/N > 3
+
+Fitting MS_9171_2505
+Fitting MS_9171_2510
+MS_9171_2510 has no data with S/N > 3
+
+Fitting MS_9171_2524
+Fitting MS_9171_2542
+Fitting MS_9171_2545
+Fitting MS_9171_2565
+Fitting MS_9171_2579
+Fitting MS_9171_2589
+Fitting MS_9171_2596
+Fitting MS_9171_260
+Fitting MS_9171_262
+Fitting MS_9171_2628
+Fitting MS_9171_267
+Fitting MS_9171_268
+Fitting MS_9171_271
+Fitting MS_9171_2743
+MS_9171_2743 has no data with S/N > 3
+
+Fitting MS_9171_2751
+Fitting MS_9171_28
+Fitting MS_9171_2812
+Fitting MS_9171_2847
+Fitting MS_9171_2854
+MS_9171_2854 has no data with S/N > 3
+
+Fitting MS_9171_29
+Fitting MS_9171_2920
+Fitting MS_9171_294
+Fitting MS_9171_2942
+Fitting MS_9171_298
+Fitting MS_9171_2984
+MS_9171_2984 has no data with S/N > 3
+
+Fitting MS_9171_3017
+MS_9171_3017 has no data with S/N > 3
+
+Fitting MS_9171_304
+Fitting MS_9171_307
+Fitting MS_9171_309
+Fitting MS_9171_31
+Fitting MS_9171_310
+Fitting MS_9171_311
+Fitting MS_9171_3120
+Fitting MS_9171_3126
+MS_9171_3126 has no data with S/N > 3
+
+Fitting MS_9171_316
+Fitting MS_9171_327
+Fitting MS_9171_3359
+MS_9171_3359 at z = 0.8903 had a error: 
+Probability function returned NaN
+
+Fitting MS_9171_338
+Fitting MS_9171_34
+Fitting MS_9171_3409
+Fitting MS_9171_3412
+finished at Thu Sep 23 08:12:07 PDT 2021$
