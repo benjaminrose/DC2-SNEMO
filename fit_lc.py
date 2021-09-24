@@ -284,6 +284,9 @@ if __name__ == "__main__":
         "--sn", metavar="N", type=int, default=5, help="Number of SN to fit"
     )
     parser.add_argument(
+        "--all", action='store_true', help="Ignore --sn and fit all the DC2 SN."
+    )
+    parser.add_argument(
         "--model", default="snemo2", help="SNCosmo model to use"
     )
 
@@ -296,7 +299,10 @@ if __name__ == "__main__":
     FITS = True  # Read FITS data files (instead of ascii files)
     MCMC = True  # DESC SN conda env does not have iminuit, need to use emcee
     Z_WIDTH = 0.002
-    MAX_SN = args.sn
+    if args.all:
+        MAX_SN = None    # Restores default to sncosmo.read_snana_fits.
+    else:
+        MAX_SN = args.sn
     MINSNR = 3  # Overides SNCosmo's default of 5.
     WARNINGS = False
     VERBOSE = False
