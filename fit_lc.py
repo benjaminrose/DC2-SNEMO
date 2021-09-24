@@ -1,5 +1,6 @@
-"""fit_lc.py - 
+"""Fit DC2 SN with SNEMO.
 """
+import argparse
 from datetime import datetime
 import os
 from pathlib import Path
@@ -185,9 +186,9 @@ def combin_and_tidy(data_tables, fit_results):
     tidy_data[
         np.char.add(f"{MODEL.upper()}_", fit_results[0].param_names)
     ] = fit_results[0].parameters
-    #OrderedDicts are a pain in DuckTyping. You can't iterate over it with `np.char.add`.
+    # OrderedDicts are a pain in DuckTyping. You can't iterate over it with `np.char.add`.
     tidy_data[
-        [f"{MODEL.upper()}_"+str(s)+"_ERR" for s in fit_results[0].errors.keys()]
+        [f"{MODEL.upper()}_" + str(s) + "_ERR" for s in fit_results[0].errors.keys()]
     ] = fit_results[0].errors.values()
     tidy_data[f"{MODEL}_accept_frac".upper()] = fit_results[0].mean_acceptance_fraction
 
@@ -202,9 +203,15 @@ def combin_and_tidy(data_tables, fit_results):
             next_index, np.char.add(f"{MODEL.upper()}_", fit.param_names)
         ] = fit.parameters
         tidy_data.loc[
-            next_index, [f"{MODEL.upper()}_"+str(s)+"_ERR" for s in fit_results[0].errors.keys()]
+            next_index,
+            [
+                f"{MODEL.upper()}_" + str(s) + "_ERR"
+                for s in fit_results[0].errors.keys()
+            ],
         ] = fit.errors.values()
-        tidy_data.loc[next_index, f"{MODEL}_accept_frac".upper()] = fit.mean_acceptance_fraction
+        tidy_data.loc[
+            next_index, f"{MODEL}_accept_frac".upper()
+        ] = fit.mean_acceptance_fraction
 
     # Convert bite-strings to string-strings
     # Sadly this is not done inplace.
@@ -271,14 +278,25 @@ def main():
 
 
 if __name__ == "__main__":
-    MODEL = "snemo2"
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--sn", metavar="N", type=int, default=5, help="Number of SN to fit"
+    )
+    parser.add_argument(
+        "--model", default="snemo2", help="SNCosmo model to use"
+    )
+
+    args = parser.parse_args()
+
+    MODEL = args.model
     DATA_LOCATION = "/global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge/DC2_run22i_FITS"
     ERROR_FILE_PATH = os.getcwd() + "/ERROR.log"
     OUTPUT_LOCATION = os.getcwd()
     FITS = True  # Read FITS data files (instead of ascii files)
     MCMC = True  # DESC SN conda env does not have iminuit, need to use emcee
     Z_WIDTH = 0.002
-    MAX_SN = 25
+    MAX_SN = args.sn
     MINSNR = 3  # Overides SNCosmo's default of 5.
     WARNINGS = False
     VERBOSE = False
